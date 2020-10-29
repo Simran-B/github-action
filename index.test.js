@@ -6,5 +6,7 @@ const path = require("path")
 test("valid string", () => {
     process.env["INPUT_STRING"] = "Hello World!"
     const ip = path.join(__dirname, "index.js")
-    console.log(cp.execSync(`node ${ip}`, {env: process.env}).toString())
+    const stdout = cp.execSync(`node ${ip}`, {env: process.env}).toString()
+    expect(stdout.trim()).toBe("::set-output name=reversed::!dlroW olleH")
+    console.log(stdout)
 })
