@@ -1,0 +1,12 @@
+name: Test Action
+description: A JavaScript action
+inputs:
+  string:
+    description: Some string
+    required: true
+  outputs:
+    reversed:
+      description: the input string backwards
+runs:
+  using: node12
+  main: dist/index.js
